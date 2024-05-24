@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:27:18 by pajimene          #+#    #+#             */
-/*   Updated: 2024/05/24 16:19:15 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/05/24 16:09:05 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,16 +105,16 @@ char	*ft_clean_buffer(char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[FOPEN_MAX];
 	char		*next_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	buffer = ft_read_line(buffer, fd);
-	if (!buffer)
+	buffer[fd] = ft_read_line(buffer[fd], fd);
+	if (!buffer[fd])
 		return (NULL);
-	next_line = ft_write_line(buffer);
-	buffer = ft_clean_buffer(buffer);
+	next_line = ft_write_line(buffer[fd]);
+	buffer[fd] = ft_clean_buffer(buffer[fd]);
 	return (next_line);
 }
 
