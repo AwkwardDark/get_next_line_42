@@ -6,7 +6,7 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:27:18 by pajimene          #+#    #+#             */
-/*   Updated: 2024/05/27 14:37:25 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/05/27 14:19:02 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ char	*ft_clean_buffer(char *buffer)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer = {0};
+	static char	*buffer;
 	char		*next_line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)

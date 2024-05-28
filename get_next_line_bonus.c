@@ -6,11 +6,11 @@
 /*   By: pajimene <pajimene@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 15:27:18 by pajimene          #+#    #+#             */
-/*   Updated: 2024/05/24 16:09:05 by pajimene         ###   ########.fr       */
+/*   Updated: 2024/05/28 16:53:35 by pajimene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_join_free(char *buffer, char *temp_buffer)
 {
